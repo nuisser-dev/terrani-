@@ -1,0 +1,88 @@
+{% extends 'user/userdashbord.html.twig' %}
+
+{% block title %}dash1{% endblock %}
+{% block head %}
+
+   {% block stylesheets %}
+            <link rel="stylesheet" href="{{asset('css/stle5.css')}}">
+        {% endblock %}
+{% endblock %}
+    
+      {% block body %}
+      <div class="container">
+        <div class=" text-center mt-5 ">
+
+            <h1 >Reserve votre match </h1>
+                
+            
+        </div>
+
+    
+    <div class="row ">
+      <div class="col-lg-7 mx-auto">
+        <div class="card mt-2 mx-auto p-4 bg-light">
+            <div class="card-body bg-light">
+       
+            <div class = "container">
+                             <form method='post'>
+
+            
+
+            <div class="controls">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_name">date du reservation </label>
+                            <input id="form_name" type="date" name="t1" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_lastname">heure date reservation de debut </label>
+                            <input id="form_lastname" type="time" name="t2" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                                                            </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_email">heure de reservation de fin</label>
+                            <input id="form_email" type="time" name="t3" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                            
+                        </div>
+                    </div>
+                   
+          
+
+
+                    <div class="col-md-12">
+                        
+                        <input type="submit" class="btn btn-success btn-send  pt-2 btn-block " value="Send Message" >
+                        <br>
+                       {% if message is defined %}
+                     <div class="alert alert-success">{{ message }}</div>
+                      {% endif %}
+
+                </div>
+          
+                </div>
+
+
+        </div>
+         </form>
+        </div>
+            </div>
+
+
+    </div>
+        <!-- /.8 -->
+
+    </div>
+    <!-- /.row-->
+
+</div>
+</div>
+
+        {% endblock %}

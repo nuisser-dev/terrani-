@@ -1,0 +1,117 @@
+
+  <head>
+  	
+     <title>{% block title %}Welcome!{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('css/style3.css') }}">
+      <link rel="stylesheet" href="{{ asset('css/stylem.css') }}">
+     {% block stylesheets %}
+		 <link rel="stylesheet" href="{{ asset('css/style3.css') }}">
+          <link rel="stylesheet" href="{{ asset('css/stylem.css') }}">
+        {% endblock %}
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+	  		<h1><a href="index.html" class="logo">Compte</a></h1>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="{{ path('dash1', {'id': id}) }}"><span class="fa fa-home mr-3"></span> Dashboard</a>
+          </li>
+          <li>
+              <a href="#"><span class="fa fa-user mr-3"></span> Liste des reservations</a>
+          </li>
+
+          </li>
+        </ul>
+
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+  
+<div>
+<div>
+       
+         {% block body %} 
+         {% if reserv %}
+        
+       
+         
+         
+         <section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">listes des reservation </h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table">
+						  <thead class="thead-primary">
+						    <tr>
+						      <th>Numero reservation </th>
+						      <th>date reservation</th>
+						      <th>Heure debut </th>
+						      <th>heure fin </th>
+                              <th>statue de la reservation </th>
+                              <th>annuler la reservation </th>
+						    </tr>
+						  </thead>
+						  <tbody>
+                           {% for i in reserv %}
+						    <tr>
+						      <th scope="row">{{i.numresv}}</th>
+						      <td>{{i.dateresv | date('Y-m-d')}}</td>
+						    <td>{{i.heuerdeb | date('h:i')}}</td>
+                            <td>{{i.heuerfin | date('h:i')}}</td>
+                               <td>{{i.statue}}</td>
+                               <td><button type="button" class="btn btn-primary"><a  href="{{ path('delete', {'id': i.numresv }) }}" color='black'>annulation</a></button></td>
+						    </tr>
+						 {% endfor %}
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+         
+         
+          {% endif %} 
+         
+         
+         
+         
+         
+         
+         
+          {% endblock %}
+
+      </div>
+		</div>
+
+        <script src="{{asset('js/jquery.min.js')}}"></script>
+ 
+  <script src="{{asset('js/popper.min.js')}}"></script>
+  <script src="{{asset('js/bootstrap.min.js')}}"></script>
+ 
+
+  <script src="{{asset('js/main.js')}}"></script>
+
+
+  </body>

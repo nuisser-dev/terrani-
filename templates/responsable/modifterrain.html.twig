@@ -1,0 +1,98 @@
+
+  <head>
+ <title>{% block title %}Welcome!{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" href="{{ asset('css/style4.css') }}">
+    
+     {% block stylesheets %}
+		 <link rel="stylesheet" href="{{ asset('css/style4.css') }}">
+        {% endblock %}
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/logo.jpg);"></a>
+	        <ul class="list-unstyled components mb-5">
+	          <li class="active">
+	            <a  data-toggle="collapse" aria-expanded="false" >Home</a>
+	          
+	          </li>
+	          <li>
+	              <a href="#">liste terrain</a>
+	       
+	        </ul>
+
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">liste terrain</a>
+                </li>
+        
+              </ul>
+            </div>
+          </div>
+        </nav>
+{% block body %}
+<form method='post'>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">name</label>
+    <input type="text" class="form-control" name="t1" aria-describedby="emailHelp" value={{ter.getNom()}}>
+
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">adresse</label>
+    <input type="text" class="form-control" name="t2" value={{ter.getAdresse()}}>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">statue</label>
+    <input type="text" class="form-control" name="t3" value={{ter.getStatue()}}>
+  </div>
+ 
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+        {% endblock %}
+      </div>
+		</div>
+
+        </div>
+<script src="{{asset('js/jquery.min.js')}}"></script>
+ 
+  <script src="{{asset('js/popper.min.js')}}"></script>
+  <script src="{{asset('js/bootstrap.min.js')}}"></script>
+ 
+
+  <script src="{{asset('js/main.js')}}"></script>
+
+
+
+  </body>

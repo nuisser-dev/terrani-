@@ -1,0 +1,72 @@
+
+
+<head>
+
+		
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+   <link rel="stylesheet" href="{{ asset('css/style1.css') }}">
+</head>
+<body>
+    
+
+<div class="container-fluid">
+    <div class="row no-gutter">
+        <!-- The image half -->
+        <div class="col-md-6 d-none d-md-flex bg-image"  style="background-image: url('img/photo1.jpg');"></div>
+
+
+        <!-- The content half -->
+        <div class="col-md-6 bg-light">
+            <div class="login d-flex align-items-center py-5">
+
+                <!-- Demo content-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-xl-7 mx-auto">
+                            <h3 class="display-4">Login page </h3>
+                            <p class="text-muted mb-4">Start learning from here.</p>
+                            <form method="POST"  >
+                              
+                                <div class="form-group mb-3">
+                                    <input name="name" id="inputEmail" type="text" placeholder="Email address" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <input  name="pas" id="inputPassword" type="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                                </div>
+                                 <label for="contactChoice1">choisir</label>
+                                <div>
+    <input type="radio" id="contactChoice1"
+     name="t1" value="responsable" >
+    <label for="contactChoice1">responsable</label>
+
+    <input type="radio" id="contactChoice2"
+     name="t1" value="client">
+    <label for="contactChoice1">client</label>
+    </div>
+                                <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign in</button>
+                               
+                            {% if message is defined %}
+    <div class="alert alert-danger">{{ message }}</div>
+{% endif %}
+
+                            </form>
+                        </div>
+                    </div>
+                </div><!-- End -->
+
+            </div>
+        </div><!-- End -->
+
+    </div>
+    
+</div>
+
+</body>
+
+</html>
+
+
+
+
+
